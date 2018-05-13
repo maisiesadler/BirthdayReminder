@@ -18,7 +18,7 @@ func Go() {
 	bot := CreateBot(token)
 	bot.sendMessage <- "Starting Up"
 
-	ch := initNoon()
+	ch := initEveryMinute()
 	for {
 		select {
 		case _ = <-ch:
