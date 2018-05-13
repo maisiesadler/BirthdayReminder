@@ -49,7 +49,8 @@ func CreateBot(token string) SlackSession {
 			}
 		}
 	}
-	fmt.Println("found" + string(len(sendToUsers)) + "users")
+	st := fmt.Sprintf("%s%d%s", "found", len(sendToUsers), "users")
+	fmt.Println(st)
 	session := SlackSession{sendMessage: make(chan string), users: sendToUsers}
 	go sendMessages(rtm, session)
 	go ListenToBot(rtm)
