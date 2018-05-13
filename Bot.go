@@ -1,4 +1,4 @@
-package main
+package birthday_reminder
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ type SlackSession struct {
 	users       []string
 }
 
-func main() {
+func Go() {
 	// persist.Add("testing", "123")
 	token := os.Getenv("SLACK_TOKEN")
 	bot := CreateBot(token)
