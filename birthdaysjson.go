@@ -18,7 +18,7 @@ func readJson() []Birthday2 {
 	byt, _ := ioutil.ReadFile("/birthday/birthdays.json")
 	// byt := []byte(b)
 	json.Unmarshal(byt, &birthdays)
-	fmt.Printf("%v", birthdays)
+	fmt.Printf("available: %v", birthdays)
 
 	return birthdays
 }
