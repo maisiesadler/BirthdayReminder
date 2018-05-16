@@ -40,7 +40,9 @@ func CreateBot(token string) SlackSession {
 	sendToUsers := []string{}
 	users, err := rtm.GetUsers()
 	if err == nil {
+		fmt.Print("usrs")
 		for _, usr := range users {
+			fmt.Print(usr.Name)
 			if usr.Name == "maisie" {
 				id, found := getIMChannelForUser(api, usr.ID)
 				if found {
