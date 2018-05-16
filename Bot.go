@@ -18,7 +18,7 @@ func Go() {
 	bot := CreateBot(token)
 	bot.sendMessage <- "Starting Up"
 
-	ch := initEveryMinute()
+	ch := initNoon()
 	for {
 		select {
 		case _ = <-ch:
@@ -78,7 +78,6 @@ func sendMessages(rtm *slack.RTM, session SlackSession) {
 		select {
 		case message := <-session.sendMessage:
 			for _, usrID := range session.users {
-				fmt.Printf("sending message to user: %v", message)
 				rtm.SendMessage(rtm.NewOutgoingMessage(message, usrID))
 			}
 		}
