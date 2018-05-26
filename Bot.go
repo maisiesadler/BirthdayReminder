@@ -106,7 +106,7 @@ Loop:
 				// fmt.Printf("%v ", output)
 
 				// //if ev.User != info.User.ID && strings.HasPrefix(ev.Text, prefix) {
-				rtm.SendMessage(rtm.NewOutgoingMessage("hi", ev.Channel))
+				// rtm.SendMessage(rtm.NewOutgoingMessage("hi", ev.Channel))
 				//}
 
 			case *slack.RTMError:
